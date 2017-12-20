@@ -74,5 +74,19 @@ namespace QAChallenge_Marcia
             registration.MobileNumber.SendKeys(Config.ValuesRegistration.MobileNumer);
             registration.BtnRegister.Click();
         }
+
+        public static void ValidLogin()
+        {
+            TimeSpan ts = TimeSpan.FromSeconds(20);
+            WebDriverWait wait = new WebDriverWait(Driver.driver, ts);
+
+            LoginPage loginPage = new LoginPage();
+            wait.Until(ExpectedConditions.ElementExists(By.ClassName("page-subheading")));
+            loginPage.Login.SendKeys(Config.Credentials.AccessName);
+            loginPage.Password.SendKeys(Config.Credentials.Password);
+            loginPage.BtnSignIn.Click();
+            wait.Until(ExpectedConditions.ElementExists(By.CssSelector("#center_column > div > div:nth-child(1) > ul > li:nth-child(4) > a")));
+        }
+
     }
 }

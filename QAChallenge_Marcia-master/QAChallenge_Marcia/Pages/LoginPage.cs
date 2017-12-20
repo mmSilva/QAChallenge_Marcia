@@ -22,7 +22,7 @@ namespace QAChallenge_Marcia.Pages
         [FindsBy(How = How.Id, Using = "passwd")]
         public IWebElement Password { get; set; }
 
-        [FindsBy(How = How.CssSelector, Using = "#SubmitCreate > span")]
+        [FindsBy(How = How.Id, Using = "SubmitLogin")]
         public IWebElement BtnSignIn { get; set; }
 
     }

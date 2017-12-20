@@ -3,9 +3,9 @@ using System.Threading;
 
 namespace QAChallenge_Marcia.Scenarios
 {
-    class CreateAccountTest
+    class CreateAccountTestCase
     {
-        public CreateAccountTest()
+        public CreateAccountTestCase()
         {
 
         }
@@ -29,6 +29,8 @@ namespace QAChallenge_Marcia.Scenarios
         [OneTimeTearDown]
         public void CleanUp()
         {
+            string fileName = "CreateAccount.jpg";
+            Actions.TakeScreenShotOnFailure(fileName);
             Driver.driver.Quit();
         }
     }
